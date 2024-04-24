@@ -3,21 +3,35 @@ export interface AuthForm {
     password: string
     remember: boolean
   }
-
+  export interface User {
+    id: number 
+    name:string
+    contactNumber: string
+    email: string
+    password: string
+    status: string
+    role: string
+  }
   export interface Category {
     id: number
     name: string
-    description: string
-    users_count?: string
   }
-
   export interface Produit {
-
+    id: string
+    name:string
+    categoryId: string
+    description: string
+    price: number 
+    status: string
   }
-
   export interface Bill{
-
-  }
-  export interface Dashboard{
-    
+    id: number
+    uuid: string
+    name: string
+    email: string
+    contactNumber: string
+    paymentMethod: string
+    total: number
+    productDetails: string
+    createdBy: string
   }
