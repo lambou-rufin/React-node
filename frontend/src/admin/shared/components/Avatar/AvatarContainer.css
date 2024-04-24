@@ -1,0 +1,10 @@
+.avatar-container {
+  border-radius: 50%; /* Masque de bordure arrondie pour rendre l'avatar rond */
+  overflow: hidden; /* Pour cacher tout contenu qui dépasse de la bordure arrondie */
+}
+
+.avatar-image {
+  width: 100%; /* Pour remplir complètement la div parente */
+  height: 100%; /* Pour remplir complètement la div parente */
+  object-fit: cover; /* Pour s'assurer que l'image remplit entièrement la div tout en conservant son aspect */
+}

@@ -1,0 +1,22 @@
+@media (max-width: 444px) {
+  .data-table-action-wrap {
+    display: block;
+  }
+
+  .data-table-search {
+    margin: auto;
+    margin-top: 10px;
+  }
+
+  .data-table-action-wrap {
+    margin: auto;
+  }
+
+  .export-options {
+    margin-top: 10px;
+  }
+}
+
+.data-table-wrapper .rdt_TableCol:last-child .rdt_TableCol_Sortable {
+  justify-content: flex-start;
+}

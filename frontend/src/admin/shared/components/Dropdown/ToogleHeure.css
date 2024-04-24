@@ -1,0 +1,49 @@
+/* Style pour le conteneur scrollable */
+.scrollable-container {
+  display: flex;
+  overflow-y: auto;
+  white-space: nowrap;
+  height: 200px;
+}
+
+/* Style pour les éléments dans le conteneur scrollable */
+.hour-container,
+.minute-container {
+  /* display: flex; */
+  overflow-y: auto;
+  width: 100%;
+}
+
+/* Style pour chaque élément dans les heures et les minutes */
+.hour-item,
+.minute-item {
+  flex: 0 0 40px; /* Largeur fixe pour chaque élément */
+  height: 40px;
+  /* border: 1px solid #ccc; */
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Style pour l'élément sélectionné */
+.hour-item.selected,
+.minute-item.selected {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Style pour le dropdown (ajoutez selon vos besoins) */
+.dropdown-menu {
+  width: 300px; /* Largeur du dropdown */
+}
+
+.active-time {
+  background-color: #f7f7f7;
+}
+
+.hour-item:hover,
+.minute-item:hover {
+  background-color: #f7f7f7;
+}

@@ -1,0 +1,109 @@
+// colors
+export const Colors = {
+  blue: '#0080FF',
+  indigo: '#5b5efb',
+  purple: '#8927f9',
+  pink: '#f24a8b',
+  red: '#df3c4e',
+  orange: '#f85f32',
+  yellow: '#f2bc16',
+  green: '#2dc58c',
+  teal: '#2acc9c',
+  cyan: '#478ffc',
+  black: '#000',
+  white: '#fff',
+  gray: '#6B7280',
+  grayDark: '#374151',
+  gray100: '#f1f2f7',
+  gray200: '#E5E7EB',
+  gray300: '#D1D5DB',
+  gray400: '#6B7280',
+  gray500: '#6B7280',
+  gray600: '#4B5563',
+  gray700: '#374151',
+  gray800: '#1F2937',
+  gray900: '#111827',
+  primary: '#5f38f9',
+  secondary: '#374151',
+  success: '#2dc58c',
+  info: '#478ffc',
+  warning: '#f2bc16',
+  danger: '#df3c4e',
+  lighter: '#f1f2f7',
+  light: '#E5E7EB',
+  dark: '#1F2937',
+  darker: '#111827',
+
+  bodyColor: '#787c9e',
+  bodyBg: '#f8f8f9',
+  borderColor: '#d2d4e4',
+  borderColorTranslucent: 'rgba(0, 0, 0, 0.175)',
+
+  linkColor: '#5f38f9',
+  linkHoverColor: '#4c2dc7',
+  codeColor: '#f24a8b',
+  highlightBg: '#fcf2d0',
+}
+
+// list of all months in english word
+export const monthList = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+]
+
+const getToday = () => {
+  const today = new Date()
+  const dd = String(today.getDate()).padStart(2, '0')
+  const mm = String(today.getMonth() + 1).padStart(2, '0')
+  const yyyy = today.getFullYear()
+
+  return yyyy + '-' + mm + '-' + dd
+}
+export const today = getToday()
+
+const getTesterday = () => {
+  const today = new Date()
+  const yesterday = new Date(today)
+  yesterday.setDate(today.getDate() - 1)
+  const y_dd = String(yesterday.getDate()).padStart(2, '0')
+  const y_mm = String(yesterday.getMonth() + 1).padStart(2, '0')
+  const y_yyyy = yesterday.getFullYear()
+
+  return y_yyyy + '-' + y_mm + '-' + y_dd
+}
+export const yesterday = getTesterday()
+
+const getCurrentMonth = () => {
+  const today = new Date()
+  const mm = String(today.getMonth() + 1).padStart(2, '0')
+  const yyyy = today.getFullYear()
+
+  return yyyy + '-' + mm
+}
+
+export const currentMonth = getCurrentMonth()
+
+// get first and last character from string
+const getInitials = (name: any) => {
+  const names = name.split(' ')
+  let initials = names[0].substring(0, 1).toUpperCase()
+
+  if (names.length > 1) {
+    initials += names[names.length - 1].substring(0, 1).toUpperCase()
+  }
+  return initials
+}
+
+export const toInitials = getInitials
+
+export const Break = { mb: 420, sm: 576, md: 768, lg: 992, xl: 1200, xxl: 1400, any: Infinity }
