@@ -1,8 +1,3 @@
-/**
- *  Microtaskers
- *  Nom: ANDRIARILALAO Johny Lino
- *  Email: johny.andriarilalao@gmail.com
- */
 
 import DashboardPage from 'admin/modules/dashboard';
 import SitePage from 'admin/modules/setting/Site';
@@ -91,38 +86,11 @@ const RouterAdmin: React.FC = () => {
           }
         />
 
-        {/* <Route
-          path="/song/*"
-          element={
-            <SuspenseView>
-              <SongPage />
-            </SuspenseView>
-          }
-        /> */}
-
-        <Route
-          path="/event/*"
-          element={
-            <SuspenseView>
-              <EventPage />
-            </SuspenseView>
-          }
-        />
-
         <Route
           path="/community/*"
           element={
             <SuspenseView>
               <CommunityPage />
-            </SuspenseView>
-          }
-        />
-
-        <Route
-          path="/setting/*"
-          element={
-            <SuspenseView>
-              <SettingPage />
             </SuspenseView>
           }
         />
