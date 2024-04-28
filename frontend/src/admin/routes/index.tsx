@@ -54,7 +54,7 @@ const RouterAdmin: React.FC = () => {
     };
   }, []);
 
-  const PersonPage = lazy(() => import('admin/modules/personn'));
+  const Dashboard = lazy(() => import('admin/modules/personn'));
   const SongPage = lazy(() => import('admin/modules/song'));
 
   return (
@@ -64,7 +64,7 @@ const RouterAdmin: React.FC = () => {
           path="/person/*"
           element={
             <SuspenseView>
-              <PersonPage />
+              <Dashboard />
             </SuspenseView>
           }
         />
@@ -82,15 +82,6 @@ const RouterAdmin: React.FC = () => {
           element={
             <SuspenseView>
               <ProcessPage />
-            </SuspenseView>
-          }
-        />
-
-        <Route
-          path="/community/*"
-          element={
-            <SuspenseView>
-              <CommunityPage />
             </SuspenseView>
           }
         />

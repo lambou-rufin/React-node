@@ -17,7 +17,7 @@ export interface AuthForm {
     name: string
   }
   export interface Produit {
-    id: string
+    id: number
     name:string
     categoryId: string
     description: string
