@@ -104,7 +104,7 @@ const RouterAdmin: React.FC = () => {
           }
         />
 
-        <Route path="*" element={<Navigate to="/admin/person/list" />} />
+        <Route path="*" element={<Navigate to="/admin/modules/dashboard" />} />
       </Route>
     </Routes>
   );
