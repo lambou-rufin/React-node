@@ -1,5 +1,4 @@
 
-import DashboardPage from 'admin/modules/dashboard';
 import SitePage from 'admin/modules/setting/Site';
 import { SuspenseView } from 'public/shared/components/SuspenseView';
 import React, { lazy, useEffect, useRef } from 'react';
@@ -54,7 +53,7 @@ const RouterAdmin: React.FC = () => {
     };
   }, []);
 
-  const Dashboard = lazy(() => import('admin/modules/personn'));
+  const Dashboard = lazy(() => import('admin/modules/Dashboard'));
   const SongPage = lazy(() => import('admin/modules/song'));
 
   return (
@@ -65,14 +64,6 @@ const RouterAdmin: React.FC = () => {
           element={
             <SuspenseView>
               <Dashboard />
-            </SuspenseView>
-          }
-        />
-        <Route
-          path="/dashboard/*"
-          element={
-            <SuspenseView>
-              <DashboardPage />
             </SuspenseView>
           }
         />

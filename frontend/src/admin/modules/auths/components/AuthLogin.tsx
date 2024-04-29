@@ -186,12 +186,12 @@ const AuthLoginPage: React.FC = () => {
                       <div className="mt-4">
                         <div className="h1 title mb-3">Vivons l'église différemment !</div>
                         <p style={{ textAlign: 'justify' }}>
-                          Bienvenue dans une expérience d’église connectée, à la fois innovante,
-                          authentique, transformante et accessible à tous. Cette application a été
-                          conçue comme un outil de croissance par excellence pour aider chacun à
-                          devenir ce qu’il est appelé à être et à accomplir ses missions. Son
-                          objectif est de faciliter le déclenchement de moments décisifs dans la vie
-                          de ses utilisateurs pour qu’ils atteignent leur plein potentiel.
+                          Bienvenue dans une expérience de gestion de produit, 
+                          Cet emploi/métier est accessible avec un diplôme de niveau Licence (licence professionnelle,
+                           ...) à Master (Master professionnel, 
+                           diplôme d'école de commerce, ...) en commerce ou marketing.
+                          La pratique d'une langue étrangère,
+                          en particulier l'anglais, peut être exigée.
                         </p>
                       </div>
                     </div>
