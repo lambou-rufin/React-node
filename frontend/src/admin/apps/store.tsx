@@ -10,14 +10,11 @@ import songsReducer from '../modules/song/core/reducers'
 
 export const store = configureStore({
   reducer: {
-    events: eventReducer,
-    typeEvents: typeEventReducer,
-    unrolledTypeEvents: unrolledTypeEventsReducer,
-    unrolledEvents: unrolledEventsReducer,
-    songs: songsReducer,
-    persons: personReducer,
-    processes: processReducer,
-    sessions: sessionsReducer,
+    user: userReducer,
+    bill: billReducer,
+    categorie: categorieReducer,
+    dashboard: dashboardReducer,
+    produit: produitReducer
   },
 })
 
