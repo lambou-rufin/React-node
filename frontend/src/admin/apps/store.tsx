@@ -7,6 +7,7 @@ import eventReducer from '../modules/event/core/reducers'
 import personReducer from '../modules/personn/core/reducers'
 import processReducer from '../modules/process/core/reducers'
 import songsReducer from '../modules/song/core/reducers'
+import { userReducer } from '../modules/auths/core/reducers'
 
 export const store = configureStore({
   reducer: {
