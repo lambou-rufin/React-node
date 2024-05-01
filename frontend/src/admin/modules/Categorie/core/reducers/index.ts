@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { addEvent, deleteEvent, fetchEvents, updateEvent } from '../api/api';
-import { IEvent } from '../models';
+import { addCategory, deleteCategory, fetchCategory, updateCategory } from '../api/api';
+import { ICategory } from '../models';
 import { EStatus } from 'admin/shared/inteface/enum';
 
-const Category = createSlice({
+const categorySlice = createSlice({
   name: 'category',
   initialState: {
-    category: [] as Icategory[],
-    selectedEvent: {} as Icategory,
+    category: [] as ICategory[],
+    selectedEvent: {} as ICategory,
     status: EStatus.IDLE,
     statusAdd: EStatus.IDLE,
     statusDelete: EStatus.IDLE,
@@ -15,8 +15,8 @@ const Category = createSlice({
     error: null as string | null
   },
   reducers: {
-    setSelectedEvent: (state, action) => {
-      state.selectedEvent = action.payload;
+    setSelectedCategory: (state, action) => {
+      state.selectedCategory = action.payload;
     }
   },
   extraReducers: (builder) => {

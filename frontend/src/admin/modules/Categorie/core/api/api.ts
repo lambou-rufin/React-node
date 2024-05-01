@@ -1,22 +1,22 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import api, { baseWithFormData } from 'api/api';
-import { IEvent } from '../models';
+import { ICategory } from '../models';
 
-export const fetchCategory = createAsyncThunk<IEvent[]>('category/fetchCategory', async () => {
-  const response = await api.get<any>(`/api/events/paginated?per_page=50&page=1`);
+export const fetchCategory = createAsyncThunk<ICategory[]>('category/fetchCategory', async () => {
+  const response = await api.get<any>(`/api/category/paginated?per_page=50&page=1`);
   return response.data.data;
 });
 
-export const addCategory = createAsyncThunk<IEvent, IEvent>('events/addEvent', async (event) => {
-  const response = await baseWithFormData.post<IEvent>(`/api/events`, event);
+export const addCategory = createAsyncThunk<ICategory, ICategory>('category/addCategory', async (category) => {
+  const response = await baseWithFormData.post<ICategory>(`/api/category`, category);
   return response.data;
 });
 
-export const updateCategory = createAsyncThunk<IEvent, IEvent>('events/updateEvent', async (event) => {
-  const response = await baseWithFormData.post<IEvent>(`/api/events/${event.id}`, event);
+export const updateCategory = createAsyncThunk<ICategory, ICategory>('category/updateCategory', async (category) => {
+  const response = await baseWithFormData.post<ICategory>(`/api/category/${category.id}`, event);
   return response.data;
 });
 
-export const deleteCategory = createAsyncThunk<void, number>('events/deleteEvent', async (eventId) => {
-  await api.delete(`/api/events/${eventId}`);
+export const deleteCategory = createAsyncThunk<void, number>('category/deleteCategory', async (categoryId) => {
+  await api.delete(`/api/category/${categoryId}`);
 });
