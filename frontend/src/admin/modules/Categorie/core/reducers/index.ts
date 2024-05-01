@@ -3,11 +3,11 @@ import { addEvent, deleteEvent, fetchEvents, updateEvent } from '../api/api';
 import { IEvent } from '../models';
 import { EStatus } from 'admin/shared/inteface/enum';
 
-const eventsSlice = createSlice({
-  name: 'events',
+const Category = createSlice({
+  name: 'category',
   initialState: {
-    events: [] as IEvent[],
-    selectedEvent: {} as IEvent,
+    category: [] as Icategory[],
+    selectedEvent: {} as Icategory,
     status: EStatus.IDLE,
     statusAdd: EStatus.IDLE,
     statusDelete: EStatus.IDLE,
@@ -22,64 +22,64 @@ const eventsSlice = createSlice({
   extraReducers: (builder) => {
     builder
       //GET
-      .addCase(fetchEvents.pending, (state) => {
+      .addCase(fetchCategory.pending, (state) => {
         state.status = EStatus.LOADING;
       })
-      .addCase(fetchEvents.fulfilled, (state, action) => {
+      .addCase(fetchCategory.fulfilled, (state, action) => {
         state.status = EStatus.SUCCESS;
         state.events = action.payload;
       })
-      .addCase(fetchEvents.rejected, (state, action) => {
+      .addCase(fetchCategory.rejected, (state, action) => {
         state.status = EStatus.FAILED;
         state.error = action.error.message ?? 'Unknown error';
       })
       //DELETE
-      .addCase(deleteEvent.pending, (state) => {
+      .addCase(deleteCategory.pending, (state) => {
         state.statusDelete = EStatus.LOADING;
         state.error = null;
       })
-      .addCase(deleteEvent.fulfilled, (state, action) => {
+      .addCase(deleteCategory.fulfilled, (state, action) => {
         state.statusDelete = EStatus.SUCCESS;
-        const eventId = action.meta.arg;
-        state.events = state.events.filter((event) => event.id !== eventId);
+        const id = action.meta.arg;
+        state.events = state.category.filter((event) => event.id !== eventId);
       })
-      .addCase(deleteEvent.rejected, (state, action) => {
+      .addCase(deleteCategory.rejected, (state, action) => {
         state.statusDelete = EStatus.FAILED;
         state.error = action.error.message ?? 'Unknown error';
       })
       //UPDATE
-      .addCase(updateEvent.pending, (state) => {
+      .addCase(updateCategory.pending, (state) => {
         state.statusUpdate = EStatus.LOADING;
         state.error = null;
       })
-      .addCase(updateEvent.fulfilled, (state, action) => {
+      .addCase(updateCategory.fulfilled, (state, action) => {
         state.statusUpdate = EStatus.SUCCESS;
-        const updatedEvent = action.payload;
-        const index = state.events.findIndex((event) => event.id === updatedEvent.id);
+        const updatedCategory = action.payload;
+        const index = state.category.findIndex((category) => event.id === updateCategory.id);
         if (index !== -1) {
-          state.events[index] = updatedEvent;
+          state.events[index] = updatedCategory;
         }
       })
-      .addCase(updateEvent.rejected, (state, action) => {
+      .addCase(updateCategory.rejected, (state, action) => {
         state.statusUpdate = EStatus.FAILED;
         state.error = action.error.message ?? 'Unknown error';
       })
       //ADD
-      .addCase(addEvent.pending, (state) => {
+      .addCase(addCategory.pending, (state) => {
         state.statusAdd = EStatus.LOADING;
         state.error = null;
       })
-      .addCase(addEvent.fulfilled, (state, action) => {
+      .addCase(addCategory.fulfilled, (state, action) => {
         state.statusAdd = EStatus.SUCCESS;
-        state.events.push(action.payload);
-        state.selectedEvent = action.payload;
+        state.category.push(action.payload);
+        state.selectedCategory = action.payload;
       })
-      .addCase(addEvent.rejected, (state, action) => {
+      .addCase(addCategory.rejected, (state, action) => {
         state.statusAdd = EStatus.FAILED;
         state.error = action.error.message ?? 'Unknown error';
       });
   }
 });
-export const { setSelectedEvent } = eventsSlice.actions;
+export const { setSelectedCategory } = categorySlice.actions;
 
-export default eventsSlice.reducer;
+export default categorySlice.reducer;
