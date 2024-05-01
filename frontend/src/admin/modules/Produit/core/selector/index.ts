@@ -1,8 +1,8 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { RootState } from 'admin/apps/store';
-import eventsSlice from '../reducers';
+import produitSlice from '../reducers';
 
-export const selectEvents = (state: RootState) => state.events.events;
+export const selectedProduit = (state: RootState) => state.produit.produit;
 export const selectEventsStatus = (state: RootState) => state.events.status;
 export const selectEventsError = (state: RootState) => state.events.error;
 export const selectDeleteEventStatus = (state: RootState) => state.events.statusDelete;
@@ -12,7 +12,7 @@ export const selectSelectedEvent = (state: RootState) => state.events.selectedEv
 
 export const selectAllEventsState = createSelector(
   [
-    selectEvents,
+    selectedProduit,
     selectEventsStatus,
     selectEventsError,
     selectDeleteEventStatus,
@@ -20,13 +20,13 @@ export const selectAllEventsState = createSelector(
     selectAddEventStatus,
     selectSelectedEvent
   ],
-  (events, status, error, statusDelete, statusUpdate, statusAdd, selectedEvent) => ({
-    events,
+  (produit, status, error, statusDelete, statusUpdate, statusAdd, selectedProduit) => ({
+    produit,
     status,
     error,
     statusDelete,
     statusUpdate,
     statusAdd,
-    selectedEvent
+    selectedProduit
   })
 );

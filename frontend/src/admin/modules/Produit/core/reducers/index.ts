@@ -7,7 +7,7 @@ const produitSlice = createSlice({
   name: 'produit',
   initialState: {
     produit: [] as IProduit[],
-    selectedProduitt: {} as IProduit,
+    selectedProduit: {} as IProduit,
     status: EStatus.IDLE,
     statusAdd: EStatus.IDLE,
     statusDelete: EStatus.IDLE,

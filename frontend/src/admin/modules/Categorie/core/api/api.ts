@@ -13,7 +13,7 @@ export const addCategory = createAsyncThunk<ICategory, ICategory>('category/addC
 });
 
 export const updateCategory = createAsyncThunk<ICategory, ICategory>('category/updateCategory', async (category) => {
-  const response = await baseWithFormData.post<ICategory>(`/api/category/${category.id}`, event);
+  const response = await baseWithFormData.post<ICategory>(`/api/category/${category.id}`, category);
   return response.data;
 });
 
