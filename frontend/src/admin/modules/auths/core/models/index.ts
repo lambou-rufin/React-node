@@ -4,10 +4,10 @@
  *  Email: johny.andriarilalao@gmail.com
  */
 
-export interface UserModel {
+export interface IUser {
   id?: number
   name?: string
 }
 export interface IAppState {
-  currentUser: UserModel | null | any
+  currentUser: IUser| null | any
 }
