@@ -1,13 +1,12 @@
-/**
- *  Microtaskers
- *  Nom: ANDRIARILALAO Johny Lino
- *  Email: johny.andriarilalao@gmail.com
- */
-
 export interface IUser {
-  id?: number
-  name?: string
+  id: number;
+  name: string;
+  contactNumber: string;
+  email: string;
+  password: string;
+  status: string;
+  role: string;
 }
 export interface IAppState {
-  currentUser: IUser| null | any
+  currentUser: IUser | null | any;
 }

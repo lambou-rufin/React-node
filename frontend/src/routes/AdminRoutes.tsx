@@ -1,7 +1,7 @@
-import { store } from "admin/apps/store"
-import RouterAdmin from 'admin/router'
-import React from 'react'
-import { Provider } from "react-redux"
+import React from "react";
+import { Provider } from "react-redux";
+import RouterAdmin from "../admin/routes";
+import { store } from "../admin/apps/store";
 
 const AdminRoutes: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const AdminRoutes: React.FC = () => {
         <RouterAdmin />
       </Provider>
     </>
-  )
-}
+  );
+};
 
-export default AdminRoutes
+export default AdminRoutes;

@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import api, { baseWithFormData } from 'api/api';
 import { IProduit } from '../models';
+import { baseWithFormData } from '../../../../../api/api';
 
 export const fetchProduits = createAsyncThunk<IProduit[]>('produits/fetchProduits', async () => {
-  const response = await api.get<any>(`/api/events/paginated?per_page=50&page=1`);
+  const response = await baseWithFormData.get<any>(`/api/events/paginated?per_page=50&page=1`);
   return response.data.data;
 });
 
@@ -17,6 +17,6 @@ export const updateProduit = createAsyncThunk<IProduit, IProduit>('produits/upda
   return response.data;
 });
 
-export const deleteProduit = createAsyncThunk<void, number>('produits/deleteProduit', async (produitId) => {
-  await api.delete(`/api/produits/${produitId}`);
+export const deleteProduit = createAsyncThunk<void, number>('produits/deleteProduit', async (id) => {
+  await baseWithFormData.delete(`/api/produits/${id}`);
 });

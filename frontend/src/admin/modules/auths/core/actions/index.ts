@@ -1,6 +1,6 @@
 
 import { createAction } from '@reduxjs/toolkit'
-import { UserModel } from '../models'
+import { IUser } from '../models'
 
-export const setCurrentUser = createAction<UserModel | null>('user/setCurrent')
-export const initState = createAction<UserModel | null>('user/initState')
+export const setCurrentUser = createAction<IUser | null>('user/setCurrent')
+export const initState = createAction<IUser | null>('user/initState')

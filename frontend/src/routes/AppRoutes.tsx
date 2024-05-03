@@ -4,9 +4,7 @@ const AppRoutes: React.FC = () => {
   return (
     <>
       <BrowserRouter>
-      <Route>
-        
-      </Route>
+        <Route></Route>
       </BrowserRouter>
     </>
   );

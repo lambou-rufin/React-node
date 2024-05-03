@@ -2,10 +2,6 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import api, { baseWithFormData } from 'api/api';
 import { IUser } from '../models';
 
-// Fonction générique pour les opérations CRUD sur les utilisateurs
-const crudUser = (method, data) => {
-  return api[method]('/api/users', data);
-};
 
 // Action pour récupérer la liste des utilisateurs
 export const fetchUsers = createAsyncThunk<IUser[]>('users/fetchUsers', async () => {

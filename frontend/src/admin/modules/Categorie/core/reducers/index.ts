@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { addCategory, deleteCategory, fetchCategory, updateCategory } from '../api/api';
 import { ICategory } from '../models';
-import { EStatus } from 'admin/shared/inteface/enum';
+import { EStatus } from '../../../../shared/inteface/enum';
 
 const categorySlice = createSlice({
   name: 'category',
@@ -41,7 +41,7 @@ const categorySlice = createSlice({
       .addCase(deleteCategory.fulfilled, (state, action) => {
         state.statusDelete = EStatus.SUCCESS;
         const id = action.meta.arg;
-        state.events = state.category.filter((event) => event.id !== eventId);
+        state.events = state.category.filter((category) => category.id !== categoryId);
       })
       .addCase(deleteCategory.rejected, (state, action) => {
         state.statusDelete = EStatus.FAILED;
@@ -55,7 +55,7 @@ const categorySlice = createSlice({
       .addCase(updateCategory.fulfilled, (state, action) => {
         state.statusUpdate = EStatus.SUCCESS;
         const updatedCategory = action.payload;
-        const index = state.category.findIndex((category) => event.id === updateCategory.id);
+        const index = state.category.findIndex((category) => category.id === updateCategory.id);
         if (index !== -1) {
           state.events[index] = updatedCategory;
         }
