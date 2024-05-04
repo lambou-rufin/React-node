@@ -1,9 +1,11 @@
-export interface IUser {
-    id: number 
-    name:string
-    contactNumber: string
-    email: string
-    password: string
-    status: string
-    role: string
-  }
+export interface IBill{
+  id: number
+  uuid: string
+  name: string
+  email: string
+  contactNumber: string
+  paymentMethod: string
+  total: number
+  productDetails: string
+  createdBy: string
+}

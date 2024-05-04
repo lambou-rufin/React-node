@@ -3,8 +3,8 @@ import { IUser } from '../models';
 import { baseWithFormData } from '../../../../../api/api';
 
 // Action pour récupérer la liste des utilisateurs
-export const fetchUsers = createAsyncThunk<IUser[]>('users/fetchUsers', async () => {
-  const response =  await baseWithFormData.get<IUser>(`users/fetchUsers`, user);
+export const getUsers = createAsyncThunk<IUser[]>('users/getUsers', async () => {
+  const response =  await baseWithFormData.get<IUser>(`users/getUsers`, user);
   return response.data;
 });
 

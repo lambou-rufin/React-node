@@ -1,27 +1,28 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import api, { baseWithFormData } from 'api/api';
-import { IUser } from '../models';
+import { IBill } from '../models';
+import { baseWithFormData } from '../../../../../api/api';
 
 
-// Action pour récupérer la liste des utilisateurs
-export const fetchUsers = createAsyncThunk<IUser[]>('users/fetchUsers', async () => {
-  const response = await crudUser('get', {});
+// Action pour récupérer la liste des bills
+export const getBills = createAsyncThunk<IBill[]>('bill/getBills', async () => {
+  const response =  await baseWithFormData.get<IBill>(`bill/getBills`, bill);
   return response.data;
+  });
+
+  // Action pour générer un rapport PDF
+export const generateReport = createAsyncThunk<string, any>('bill/generateReport', async (orderDetails) => {
+  const response = await baseWithFormData.post<string>('/generateReport', orderDetails);
+  return response.data.uuid;
 });
 
-// Action pour ajouter un utilisateur
-export const addUser = createAsyncThunk<IUser, IUser>('users/addUser', async (user) => {
-  const response = await crudUser('post', user);
-  return response.data;
+// Action pour récupérer un PDF
+export const getPdf = createAsyncThunk<void, string>('bill/getPdf', async (uuid) => {
+  // Vous pouvez ici implémenter la logique pour télécharger le PDF en fonction de l'UUID fourni
+  // Si vous utilisez une méthode spécifique dans votre backend, remplacez cette ligne par votre logique de téléchargement de PDF
+  console.log(`Fetching PDF with UUID: ${uuid}`);
 });
 
-// Action pour mettre à jour un utilisateur
-export const updateUser = createAsyncThunk<IUser, IUser>('users/updateUser', async (user) => {
-  const response = await crudUser('patch', user);
-  return response.data;
-});
-
-// Action pour supprimer un utilisateur
-export const deleteUser = createAsyncThunk<void, number>('users/deleteUser', async (userId) => {
-  await api.delete(`/api/users/${userId}`);
+// Action pour supprimer un bill
+export const deleteBill = createAsyncThunk<void, number>('bill/deleteBill', async (userId) => {
+  await baseWithFormData.delete(`/api/bill/${userId}`);
 });
