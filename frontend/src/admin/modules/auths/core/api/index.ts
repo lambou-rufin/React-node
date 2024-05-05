@@ -24,3 +24,4 @@ export const updateUser = createAsyncThunk<IUser, IUser>('users/updateUser', asy
 export const deleteUser = createAsyncThunk<void, number>('users/deleteUser', async (id) => {
   await baseWithFormData.delete(`/api/users/${id}`);
 });
+
