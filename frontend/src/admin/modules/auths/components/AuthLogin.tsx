@@ -186,12 +186,9 @@ const AuthLoginPage: React.FC = () => {
                       <div className="mt-4">
                         <div className="h1 title mb-3">Vivons l'église différemment !</div>
                         <p style={{ textAlign: 'justify' }}>
-                          Bienvenue dans une expérience de gestion de produit, 
-                          Cet emploi/métier est accessible avec un diplôme de niveau Licence (licence professionnelle,
-                           ...) à Master (Master professionnel, 
-                           diplôme d'école de commerce, ...) en commerce ou marketing.
-                          La pratique d'une langue étrangère,
-                          en particulier l'anglais, peut être exigée.
+                        Vous souhaitez ouvrir un café depuis un petit moment,
+                         mais vous n’avez pas encore osé sauter le pas ?
+                          Bonne nouvelle : dans cet article nous vous guidons au travers de chacune des étapes à franchir pour concrétiser votre projet de création d'entreprise.
                         </p>
                       </div>
                     </div>
