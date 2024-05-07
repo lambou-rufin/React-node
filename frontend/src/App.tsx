@@ -1,9 +1,9 @@
-import React from 'react'
-import './App.css'
-import Main from './apps/main'
+import React from "react";
+import "./App.css";
+import Main from "./apps/main";
 
 const App: React.FC = () => {
-  return <Main />
-}
+  return <Main />;
+};
 
-export default App
+export default App;

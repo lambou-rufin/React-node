@@ -3,7 +3,7 @@ import AppRoutes from "../routes/AppRoutes";
 function Main() {
   return (
     <>
-      <AppRoutes/>
+      <AppRoutes />
     </>
   );
 }
