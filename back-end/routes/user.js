@@ -35,7 +35,7 @@ router.post('/signup', (req, res) => {
 })
 router.post('/login', (req, res) => {
     const user = req.body;
-    // console.log(user);
+    console.log(user);
     query = "select email,password,role,status from user where email = ?"
     connection.query(query, [user.email], (err, results) => {
         if (!err) {
@@ -148,7 +148,7 @@ router.get('/checkToken', auth.authenticateToken, (req, res) => {
 router.post('/changePassword', auth.authenticateToken, (req, res) => {
     const user = req.body;
     const email = res.locals.email;
-    console.log(email);
+    // console.log(email);
     let query = "select * from user where email=? and password=?";
     // console.log(email,user)
     connection.query(query, [email, user.oldPassword], (err, results) => {
